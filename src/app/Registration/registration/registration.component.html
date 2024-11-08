@@ -1,0 +1,36 @@
+<div class="container   mt-5 card shadow-none p-3 mb-5 bg-body-tertiary rounded">
+    <div class="row">
+
+
+        
+<form [formGroup]="RegisterForm" (ngSubmit)="RegUser()" >
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Full Name:</label>
+      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Full name" formControlName="fullName">
+      <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Email Address:</label>
+      <input type="email" class="form-control" id="exampleInputPassword1" placeholder="Email" formControlName="email" >
+    </div>
+    <!-- <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">password:</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Enter Password" >
+      </div> -->
+
+      <div class="mb-3">
+        <label for="exampleInputPassword1" class="form-label">Confirm Password:</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Confirm  Password" formControlName="password">
+      </div>
+      <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">User Role: </label>
+      <select name=""  class="form-control" formControlName="role">
+      <option value="0">Admin</option>
+      <option value="1">User</option>
+      <option value="2">Viewer</option>
+       </select>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+        </div>
+        </div>

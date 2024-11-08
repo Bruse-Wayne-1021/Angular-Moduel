@@ -1,0 +1,44 @@
+<div class="container   mt-5 card shadow-none p-3 mb-5 bg-body-tertiary rounded">
+    <div class="row">
+      <h1>Edit User</h1>
+  <form [formGroup]="addUserform"  (ngSubmit)="onAddUser()" >
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Nic : </label>
+      <input type="text" class="form-control" id="exampleInputEmail1" formControlName="nic">
+    
+      <label for="exampleInputPasswozzzrd1" class="form-label">First Name: </label>
+      <input type="text" class="form-control" id="exampleInputPassword1" formControlName="firstName">
+  
+      <label for="exampleInputPassword1" class="form-label">last Name: </label>
+      <input type="text" class="form-control" id="exampleInputPassword1" formControlName="lastName">
+
+      <label for="exampleInputPassword1" class="form-label">Email: </label>
+      <input type="text" class="form-control" id="exampleInputPassword1" formControlName="email">
+
+      <label for="exampleInputPassword1" class="form-label">password: </label>
+      <input type="text" class="form-control" id="exampleInputPassword1" formControlName="password">
+      
+      <div formGroupName="address">
+        <label for="exampleInputPassword1" class="form-label">Address Line 1:</label>
+        <input type="text" class="form-control" id="exampleInputPassword1" formControlName="addressline1">
+    
+  
+        <label for="exampleInputPassword1" class="form-label">Address Line 2: </label>
+        <input type="text" class="form-control" id="exampleInputPassword1" formControlName="addressline2">
+    
+  
+        <label for="exampleInputPassword1" class="form-label">City: </label>
+        <input type="text" class="form-control" id="exampleInputPassword1" formControlName="city">
+    
+      </div>
+
+
+   
+  
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="reset" class="btn btn-secondary" >Cancel </button>
+  </form>
+    </div>
+  </div>
+  

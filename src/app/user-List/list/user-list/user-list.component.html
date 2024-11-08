@@ -1,0 +1,57 @@
+<div class="container">
+    <div class="card shadow p-3 mb-5 bg-body-tertiary rounded">
+      <div class="card-body">
+  
+        <div class="d-flex justify-content-between mb-3">
+          <div class="p-2">
+            <input type="text" class="form-control"  [(ngModel)]="searchUser" placeholder="Search Task....">
+          </div>          <div class="ml-auto p-2">
+            <button type="button" class="btn btn-dark" [routerLink]="['/user-add']">New user</button>
+          </div>
+        </div>
+  
+        <table class="table table-bordered">
+          <thead>
+            <tr class="shadow p-3 mb-5 bg-body-tertiary">
+              <th scope="col">Id</th>
+              <th scope="col">First Name</th>
+              <th scope="col">Last Name</th>
+              <th scope="col">Nic</th>
+              <th scope="col">Email</th>
+              <th scope="col">password</th>
+              <th scope="col">Address</th>
+              <th scope="col">Action</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let item of user |userSearch: searchUser">
+              <th scope="row">{{item.id}}</th>
+              <td>{{item.firstName}}</td>
+              <td>{{item.lastName}}</td>
+              <td>{{item.nic }}</td>
+              <td>{{item.email}}</td>
+              <td>{{item.password}}</td>
+              <td>
+                {{item.address?.addressline1}},
+                {{item.address?.addressline2}},
+                {{item.address?.city}}
+              </td>
+              <td>
+                  <button type="button" class="btn btn-danger me-3" (click)="ondelete(item.id)" >
+                    <i class="bi bi-trash3"></i>
+                  </button>
+  
+                  <button type="button" class="btn btn-warning" [routerLink]="['/user-edit/',item.id]"  >
+                    <i class="bi bi-pencil-square"></i>
+                  </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  
+  </div>
+  
+  

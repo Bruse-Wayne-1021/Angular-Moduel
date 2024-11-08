@@ -1,0 +1,35 @@
+<div class="container   mt-5 card shadow-none p-3 mb-5 bg-body-tertiary rounded">
+    <div class="row">
+      <h1>Edit NewTask</h1>
+  <form  [formGroup]="addtaskForm" (ngSubmit)="onAddTask()">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Title : </label>
+      <input type="email" class="form-control" id="exampleInputEmail1" formControlName="title">
+    
+      <label for="exampleInputPassword1" class="form-label">Description: </label>
+      <input type="text" class="form-control" id="exampleInputPassword1" formControlName="description">
+  
+      <label for="exampleInputPassword1" class="form-label">DueDate: </label>
+      <input type="date" class="form-control" id="exampleInputPassword1" formControlName="dueDate">
+  
+      <label for="exampleInputPassword1" class="form-label">Priority: </label>
+      <select name=""  class="form-control" formControlName="priority">
+      <option value="High">High</option>
+      <option value="Medium">Medium</option>
+      <option value="low">low</option>
+    </select>
+
+    <label for="exampleInputPassword1" class="form-label">Assignee:  </label>
+    <select class="form-control" id="assignee" formControlName="assigneeId">
+      <option *ngFor="let user of user" [value]="user.id">{{user.firstName}}</option>
+    </select>
+
+
+  
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="reset" class="btn btn-secondary" (click)="cancel()">Cancel </button>
+  </form>
+    </div>
+  </div>
+  

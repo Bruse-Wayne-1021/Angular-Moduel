@@ -1,0 +1,61 @@
+<div class="container   mt-5 card shadow-none p-3 mb-5 bg-body-tertiary rounded">
+    <div class="row">
+      <h1>Add NewTask</h1>
+  <form  [formGroup]="addtaskForm" (ngSubmit)="onAddTask()">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Title : </label>
+      <input type="email" class="form-control" id="exampleInputEmail1" formControlName="title">
+    
+      <label for="exampleInputPasswozzzrd1" class="form-label">Description: </label>
+      <input type="text" class="form-control" id="exampleInputPassword1" formControlName="description">
+  
+      <label for="exampleInputPassword1" class="form-label">DueDate: </label>
+      <input type="date" class="form-control" id="exampleInputPassword1" formControlName="dueDate">
+  
+      <label for="exampleInputPassword1" class="form-label">Priority: </label>
+      <select name=""  class="form-control" formControlName="Priority">
+      <option value="High">High</option>
+      <option value="Medium">Medium</option>
+      <option value="low">low</option>
+       </select>
+
+       
+       <div class="mb-3">
+        <label for="assignee" class="form-label">Assignee</label>
+        <select class="form-control" id="assignee" formControlName="assigneeId">
+          <option *ngFor="let user of user" [value]="user.id">{{user.firstName}}</option>
+        </select>
+      </div>
+
+
+      <div class="col-4 mt-4" formArrayName="checkList">
+        <h3>Add CheckLists</h3>
+        <div class="row" *ngFor="let checkList of mychecklist.controls;let i=index;">
+            <div [formGroupName]="i">
+                <div class="row mt-2">
+                    <div class="col-2">
+                        <input type="checkbox" class="form-check-input fs-4" id="" formControlName="isDone">
+                    </div>
+                    <div class="col-8">
+                        <input type="text" class="form-control" id="" formControlName="name">
+                    </div>
+                    <div class="col-2">
+                        <button class="btn btn-danger" (click)="removeCheckList(i)">Remove</button>
+                    </div>
+                </div>
+            </div>
+    
+        </div>
+        <button class="btn btn-success" type="button" (click)="addCheckList()">Add</button>
+    </div>
+      
+  
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="reset" class="btn btn-secondary" (click)="cancel()">Cancel </button>
+  </form>
+    </div>
+  </div>
+
+
+  
