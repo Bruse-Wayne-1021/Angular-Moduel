@@ -8,16 +8,28 @@ import { UseraddComponent } from './user-add/useradd/useradd.component';
 import { UserEditComponent } from './User-edit/user-edit/user-edit.component';
 import { RegistrationComponent } from './Registration/registration/registration.component';
 import { LoginComponent } from './Login/login/login.component';
+import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
+import { BlankLayoutComponent } from './layout/blank-layout/blank-layout.component';
 
 const routes: Routes = [
-  {path:'',component:ListComponent},
-  {path:'add',component:AddComponent},
-  {path:'edit/:id',component:EditComponent},
-  {path:'userList',component:UserListComponent},
-  {path:'user-add',component:UseraddComponent},
-  {path:'user-edit/:id',component:UserEditComponent},
-  {path:'Registration',component:RegistrationComponent},
-  {path:'login',component:LoginComponent}
+    {
+      path:'admin',component:AdminLayoutComponent,
+      children:[
+        {path:'List',component:ListComponent},
+        {path:'add',component:AddComponent},
+        {path:'edit/:id',component:EditComponent},
+        {path:'userList',component:UserListComponent},
+        {path:'user-add',component:UseraddComponent},
+        {path:'user-edit/:id',component:UserEditComponent},
+       
+      ]
+    },{
+      path:'',component:BlankLayoutComponent,
+      children:[
+        {path:'Registration',component:RegistrationComponent},
+        {path:'login',component:LoginComponent}
+      ]
+    }
 
   
 ];

@@ -18,6 +18,9 @@ import { UserSearchPipe } from './Search Pipe/user-search.pipe';
 import { RegistrationComponent } from './Registration/registration/registration.component';
 import { LoginComponent } from './Login/login/login.component';
 
+import { BlankLayoutComponent } from './layout/blank-layout/blank-layout.component';
+import { AdminLayoutComponent } from './layout/admin-layout/admin-layout.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -31,9 +34,11 @@ import { LoginComponent } from './Login/login/login.component';
     UserSearchPipe,
     RegistrationComponent,
     LoginComponent,
-   
-    
-    
+    AdminLayoutComponent,
+    BlankLayoutComponent,
+
+
+
   ],
   imports: [
     BrowserModule,
